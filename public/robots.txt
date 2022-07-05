@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boomlabs.tech/api/sitemap
