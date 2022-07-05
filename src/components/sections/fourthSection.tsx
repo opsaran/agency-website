@@ -36,7 +36,12 @@ export function FourthSection() {
             </CTALinkBig>
           </Stack>
           <Box flex={2}>
-            <Image src="/fourth_section.webp" width={648} height={663} />
+            <Image
+              src="/fourth_section.webp"
+              width={648}
+              height={663}
+              alt="Person analysing his growth"
+            />
           </Box>
         </Stack>
       </Container>

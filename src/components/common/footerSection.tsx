@@ -13,7 +13,12 @@ export default function FooterSection() {
           justifyContent={"space-between"}
         >
           <Box flex={1} sx={{ mb: { xs: "1rem", md: "inherit" } }}>
-            <Image src="/logo.png" width={200} height={110} />
+            <Image
+              src="/logo.png"
+              width={200}
+              height={110}
+              alt="BoomLabs Logo"
+            />
           </Box>
 
           <Stack

@@ -55,7 +55,7 @@ export const NavBar = () => {
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
           <Box component={"a"} href="/" sx={{}}>
-            <Image width={110} height={60} src="/logo.png" />
+            <Image width={110} height={60} src="/logo.png" alt="BoomLabs" />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

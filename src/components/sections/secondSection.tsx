@@ -17,6 +17,7 @@ export default function SecondSection() {
               src={"/second_section.webp"}
               width={1000}
               height={550}
+              alt="Website dashboard info"
             ></Image>
           </Box>
           <Stack

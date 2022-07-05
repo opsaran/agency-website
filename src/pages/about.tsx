@@ -74,7 +74,12 @@ export default function About() {
             mt={{ xs: "-10rem", md: "0rem" }}
             pb={{ xs: "3rem", md: "0rem" }}
           >
-            <Image src="/iconsbanner.webp" width={500} height={330} />
+            <Image
+              src="/iconsbanner.webp"
+              width={500}
+              height={330}
+              alt="Our tech stack"
+            />
           </Stack>
         </Stack>
       </Container>
@@ -99,7 +104,12 @@ export default function About() {
               bgcolor="text.secondary"
             >
               <div style={{ position: "relative" }}>
-                <Image src="/founder.webp" width={225} height={258} />
+                <Image
+                  src="/founder.webp"
+                  width={225}
+                  height={258}
+                  alt="Founder"
+                />
                 <Typography
                   variant="body1"
                   position={"absolute"}

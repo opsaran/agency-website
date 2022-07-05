@@ -32,7 +32,7 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
             <div className="ani_stf_code">
               <Image
                 src="/icons/stuffs_code.png"
-                alt="circle"
+                alt="code icon"
                 width={107}
                 height={105}
               />
@@ -40,7 +40,7 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
             <div className="ani_stf_pie">
               <Image
                 src="/icons/stuffs_pie.png"
-                alt="circle"
+                alt="pie chart"
                 width={132}
                 height={132}
               />
@@ -48,7 +48,7 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
             <div className="ani_stf_dot">
               <Image
                 src="/icons/stuffs_dot.png"
-                alt="circle"
+                alt="dot"
                 width={110}
                 height={110}
               />
@@ -56,7 +56,7 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
             <div className="ani_pn_chart">
               <Image
                 src="/icons/panel_chart.png"
-                alt="circle"
+                alt="panel chart"
                 width={153}
                 height={98}
               />
@@ -64,7 +64,7 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
             <div className="ani_pn_code">
               <Image
                 src="/icons/panel_code.png"
-                alt="circle"
+                alt="panel code"
                 width={158}
                 height={118}
               />
