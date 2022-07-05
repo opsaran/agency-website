@@ -1,4 +1,3 @@
-@import "./home.module.css";
 html,
 body {
   padding: 0;
@@ -15,4 +14,130 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .con_right {
+    display: none;
+  }
+}
+
+.animate .ani_stf_circle {
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%; */
+  position: absolute;
+  top: 8rem;
+  right: 5rem;
+  animation: float_a 8s ease-in-out infinite;
+}
+
+.animate .ani_stf_code {
+  filter: grayscale(0.7);
+  position: absolute;
+  top: 4rem;
+  right: 26%;
+  animation: float_b 6s ease-in-out 1s infinite alternate;
+}
+
+.animate .ani_stf_pie {
+  position: absolute;
+  filter: invert(0.7);
+  bottom: 4rem;
+  right: 7rem;
+  animation: float_a 10s ease-in-out 1s infinite alternate;
+}
+
+.animate .ani_stf_dot {
+  position: absolute;
+  bottom: -2rem;
+  left: 60%;
+  animation: float_b 8s ease-in-out 0.5s infinite alternate;
+}
+
+.animate .ani_pn_chart {
+  filter: brightness(0.5);
+  position: absolute;
+  top: 3rem;
+  left: 15rem;
+  animation: float_c 6s ease-in-out infinite alternate;
+}
+
+.animate .ani_pn_code {
+  position: absolute;
+  bottom: 3rem;
+  left: 7rem;
+  animation: float_c 8s ease-in-out 0.5s infinite;
+}
+
+@keyframes float_a {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: translate(5px, -8px) scale(1.05) rotate(-10deg);
+  }
+  50% {
+    transform: translate(3px) scale(1) rotate(0);
+  }
+  75% {
+    transform: translate(5px, -8px) scale(1) rotate(8deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes float_b {
+  0% {
+    transform: none;
+  }
+  33% {
+    transform: translate(-6px, 6px) rotate(-5deg);
+  }
+  66% {
+    transform: translate(-4px, -5px) rotate(-3deg);
+  }
+  to {
+    transform: translate(-1px, 5px) rotate(0);
+  }
+}
+
+@keyframes float_c {
+  0% {
+    transform: none;
+  }
+  33% {
+    transform: translate(-2px, 5px);
+  }
+  66% {
+    transform: translate(2px, -5px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.slider-wrapper {
+  margin: 2rem 4rem;
+  filter: brightness(0.6);
+}
+
+.slider-wrapper:hover {
+  filter: brightness(1);
+  transform: scale(1.1);
+}
+
+.marquee-wrapper {
+  margin: 4rem 0rem;
+}
+
+@media (max-width: 600px) {
+  .marquee-wrapper {
+    margin: 2rem 0rem;
+  }
+  .slider-wrapper {
+    margin: 0.5rem 2rem;
+    filter: brightness(1);
+  }
 }
