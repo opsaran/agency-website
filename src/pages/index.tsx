@@ -23,7 +23,6 @@ const Home: NextPage = () => {
               height={50}
               alt="shopify"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -33,7 +32,6 @@ const Home: NextPage = () => {
               height={50}
               alt="wordpress"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -43,7 +41,6 @@ const Home: NextPage = () => {
               height={50}
               alt="nextjs"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -53,7 +50,6 @@ const Home: NextPage = () => {
               height={50}
               alt="webflow"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -63,7 +59,6 @@ const Home: NextPage = () => {
               height={50}
               alt="reactjs"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -73,7 +68,6 @@ const Home: NextPage = () => {
               height={50}
               alt="nodejs"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
@@ -83,7 +77,6 @@ const Home: NextPage = () => {
               height={50}
               alt="figma"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
         </Marquee>

@@ -46,7 +46,7 @@ export default function FooterSection() {
           <Stack direction="column" flex={1} spacing={3}>
             <Typography variant="h6">Connect with us</Typography>
             <div>
-              <Typography variant="body2">OP</Typography>
+              <Typography variant="body2">OP Saran</Typography>
               <Link
                 href="mailto: boomlabs.agency@gmail.com"
                 color="text.primary"

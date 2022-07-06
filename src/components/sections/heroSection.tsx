@@ -3,12 +3,12 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { CTALinkBig } from "../Items/ctaButton";
-import CustomHeroGraphic from "../common/customHeroGraphic";
+import { StyledGradientSection } from "../common/customHeroGraphic";
 import HeadlineHero from "../common/headlinehero";
 
 export default function HeroSection() {
   return (
-    <CustomHeroGraphic>
+    <StyledGradientSection>
       <Stack
         sx={{
           pl: { xs: "1rem", md: "inherit" },
@@ -21,7 +21,7 @@ export default function HeroSection() {
         justifyContent="center"
         color="text.primary"
         textAlign={"center"}
-        spacing={{ xs: 3, md: 2.5 }}
+        spacing={{ xs: 3, md: 3 }}
       >
         <Typography variant="h6" sx={{ color: "text.secondary", mb: "-1rem" }}>
           Take your Business to newer heights!
@@ -42,6 +42,6 @@ export default function HeroSection() {
           Get Started <ArrowForwardIcon />
         </CTALinkBig>
       </Stack>
-    </CustomHeroGraphic>
+    </StyledGradientSection>
   );
 }

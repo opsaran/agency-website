@@ -1,13 +1,13 @@
 import React from "react";
 import { styled, Stack } from "@mui/material";
 import Image from "next/image";
+export const StyledGradientSection = styled("section")(({ theme }) => ({
+  background: (theme as unknown as any).gradient.main,
+  height: "100vh",
+}));
 const CustomHeroGraphic: React.FunctionComponent<any> = (
   props: { children: React.ReactNode } & any
 ) => {
-  const StyledGradientSection = styled("section")(({ theme }) => ({
-    background: (theme as unknown as any).gradient.main,
-    height: "100vh",
-  }));
   const { children, ...otherProps } = props;
   return (
     <StyledGradientSection>

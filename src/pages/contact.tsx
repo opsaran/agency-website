@@ -13,7 +13,7 @@ import { NextPage } from "next";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ContactForm from "../components/common/contactForm";
-import CustomHeroGraphic from "../components/common/customHeroGraphic";
+import { StyledGradientSection } from "../components/common/customHeroGraphic";
 import MainLayout from "../components/layout/mainLayout";
 import pages from "../constants/pages";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -30,7 +30,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <MainLayout pageData={pages!.contact}>
-        <CustomHeroGraphic>
+        <StyledGradientSection>
           <Stack
             sx={{
               pl: { xs: "1rem", md: "inherit" },
@@ -52,7 +52,7 @@ const Contact: NextPage = () => {
               An amazing website awaits...
             </Typography>
           </Stack>
-        </CustomHeroGraphic>
+        </StyledGradientSection>
         <section
           style={{
             width: "100%",

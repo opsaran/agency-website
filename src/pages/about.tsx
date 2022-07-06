@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import CustomHeroGraphic from "../components/common/customHeroGraphic";
+import { StyledGradientSection } from "../components/common/customHeroGraphic";
 import { CTALinkSmall } from "../components/Items/ctaButton";
 import MainLayout from "../components/layout/mainLayout";
 import FifthSection from "../components/sections/fifthSection";
@@ -11,7 +11,7 @@ import HeadlineHero from "../components/common/headlinehero";
 export default function About() {
   return (
     <MainLayout pageData={pages!.about}>
-      <CustomHeroGraphic>
+      <StyledGradientSection>
         <Stack
           sx={{
             pl: { xs: "1rem", md: "inherit" },
@@ -29,7 +29,7 @@ export default function About() {
             Trust. Innovation. Growth
           </Typography>
         </Stack>
-      </CustomHeroGraphic>
+      </StyledGradientSection>
       <Container>
         <Stack
           direction={{ xs: "column-reverse", md: "row" }}

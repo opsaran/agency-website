@@ -54,7 +54,7 @@ export const NavBar = () => {
           disableGutters
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
-          <Box component={"a"} href="/">
+          <Link href="/">
             <Image
               width={110}
               height={60}
@@ -63,7 +63,7 @@ export const NavBar = () => {
               loading="eager"
               priority={true}
             />
-          </Box>
+          </Link>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
