@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
           <meta property="og:site_name" content="BoomLabs"></meta>
           <meta property="twitter:card" content="summary_large_image"></meta>
           <meta name="twitter:creator" content="@lifeofop"></meta>
+          <meta name="twitter:site" content="@goboomlabs"></meta>
           <link rel="shortcut icon" href="/favicon.ico" />
           <link
             rel="stylesheet"

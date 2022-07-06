@@ -51,9 +51,19 @@ const MainLayout: React.FunctionComponent<PropsInterface> = (props) => {
             content={
               pageData.ogImage
                 ? pageData.ogImage
-                : "https://www.boomlabs.agency/ogp.jpg"
+                : "https://www.boomlabs.agency/ogp.png"
             }
           ></meta>
+          <meta
+            name="twitter:image"
+            content={
+              pageData.ogImage
+                ? pageData.ogImage
+                : "https://www.boomlabs.agency/ogp.png"
+            }
+          ></meta>
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:width" content="1200" />
         </Head>
       )}
       <div style={{ background: "black" }}>
