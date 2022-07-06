@@ -9,10 +9,17 @@ import pages from "../constants/pages";
 import MainLayout from "../components/layout/mainLayout";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="nLvBaDiX6HB5nf7-QUZ5QeVKYVCp_Htf3gxYqDBjBas"
+        />
+      </Head>
       <MainLayout pageData={pages!.home}>
         <HeroSection />
         <Marquee gradientColor={[0, 0, 0]} className={"marquee-wrapper"}>
