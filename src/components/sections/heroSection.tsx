@@ -39,8 +39,7 @@ export default function HeroSection() {
         </Typography>
 
         <CTALinkBig href="/contact">
-          Get Started
-          <ArrowForwardIcon />
+          Get Started <ArrowForwardIcon />
         </CTALinkBig>
       </Stack>
     </CustomHeroGraphic>

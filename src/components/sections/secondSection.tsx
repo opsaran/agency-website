@@ -15,8 +15,8 @@ export default function SecondSection() {
           <Box flex={5} sx={{ ml: { sm: "-2rem" } }}>
             <Image
               src={"/second_section.webp"}
-              width={1000}
-              height={550}
+              width={900}
+              height={530}
               alt="Website dashboard info"
             ></Image>
           </Box>

@@ -70,7 +70,7 @@ export default function ServicesOffered() {
                 it a complete makeover.
               </Typography>
 
-              <CTALinkSmall href="/contact">Learn More</CTALinkSmall>
+              <CTALinkSmall href="/contact">Contact Us</CTALinkSmall>
             </StyledCard>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -94,7 +94,7 @@ export default function ServicesOffered() {
                 results to gain organic traffic.
               </Typography>
 
-              <CTALinkSmall href="/contact">Learn More</CTALinkSmall>
+              <CTALinkSmall href="/contact">Contact Us</CTALinkSmall>
             </StyledCard>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -118,7 +118,7 @@ export default function ServicesOffered() {
                 of chatting platform.
               </Typography>
 
-              <CTALinkSmall href="/contact">Learn More</CTALinkSmall>
+              <CTALinkSmall href="/contact">Contact Us</CTALinkSmall>
             </StyledCard>
           </Grid>
         </Grid>

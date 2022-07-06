@@ -27,6 +27,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="circle"
                 width={103}
                 height={106}
+                loading="eager"
+                priority={true}
               />
             </div>
             <div className="ani_stf_code">
@@ -35,6 +37,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="code icon"
                 width={107}
                 height={105}
+                loading="eager"
+                priority={true}
               />
             </div>
             <div className="ani_stf_pie">
@@ -43,6 +47,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="pie chart"
                 width={132}
                 height={132}
+                loading="eager"
+                priority={true}
               />
             </div>
             <div className="ani_stf_dot">
@@ -51,6 +57,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="dot"
                 width={110}
                 height={110}
+                loading="eager"
+                priority={true}
               />
             </div>
             <div className="ani_pn_chart">
@@ -59,6 +67,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="panel chart"
                 width={153}
                 height={98}
+                loading="eager"
+                priority={true}
               />
             </div>
             <div className="ani_pn_code">
@@ -67,6 +77,8 @@ const CustomHeroGraphic: React.FunctionComponent<any> = (
                 alt="panel code"
                 width={158}
                 height={118}
+                loading="eager"
+                priority={true}
               />
             </div>
           </div>

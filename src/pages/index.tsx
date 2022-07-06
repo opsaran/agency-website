@@ -17,7 +17,14 @@ const Home: NextPage = () => {
         <HeroSection />
         <Marquee gradientColor={[0, 0, 0]} className={"marquee-wrapper"}>
           <div className="slider-wrapper">
-            <Image src={"/shopify.png"} width={44} height={50} alt="shopify" />
+            <Image
+              src={"/shopify.png"}
+              width={44}
+              height={50}
+              alt="shopify"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
           <div className="slider-wrapper">
             <Image
@@ -25,22 +32,59 @@ const Home: NextPage = () => {
               width={50}
               height={50}
               alt="wordpress"
+              layout="intrinsic"
+              loading="eager"
             />
           </div>
           <div className="slider-wrapper">
-            <Image src={"/nextjs.png"} width={100} height={50} alt="nextjs" />
+            <Image
+              src={"/nextjs.png"}
+              width={100}
+              height={50}
+              alt="nextjs"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
           <div className="slider-wrapper">
-            <Image src={"/webflow.png"} width={199} height={50} alt="webflow" />
+            <Image
+              src={"/webflow.png"}
+              width={199}
+              height={50}
+              alt="webflow"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
           <div className="slider-wrapper">
-            <Image src={"/reactjs.png"} width={56} height={50} alt="reactjs" />
+            <Image
+              src={"/reactjs.png"}
+              width={56}
+              height={50}
+              alt="reactjs"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
           <div className="slider-wrapper">
-            <Image src={"/nodejs.png"} width={82} height={50} alt="nodejs" />
+            <Image
+              src={"/nodejs.png"}
+              width={82}
+              height={50}
+              alt="nodejs"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
           <div className="slider-wrapper">
-            <Image src={"/figma.png"} width={33} height={50} alt="figma" />
+            <Image
+              src={"/figma.png"}
+              width={33}
+              height={50}
+              alt="figma"
+              layout="intrinsic"
+              loading="eager"
+            />
           </div>
         </Marquee>
         <SecondSection />

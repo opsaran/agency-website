@@ -23,9 +23,6 @@ a {
 }
 
 .animate .ani_stf_circle {
-  /* background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50%; */
   position: absolute;
   top: 8rem;
   right: 5rem;
@@ -33,7 +30,6 @@ a {
 }
 
 .animate .ani_stf_code {
-  filter: grayscale(0.7);
   position: absolute;
   top: 4rem;
   right: 26%;
@@ -42,7 +38,7 @@ a {
 
 .animate .ani_stf_pie {
   position: absolute;
-  filter: invert(0.7);
+
   bottom: 4rem;
   right: 7rem;
   animation: float_a 10s ease-in-out 1s infinite alternate;
@@ -56,7 +52,6 @@ a {
 }
 
 .animate .ani_pn_chart {
-  filter: brightness(0.5);
   position: absolute;
   top: 3rem;
   left: 15rem;
@@ -120,11 +115,9 @@ a {
 
 .slider-wrapper {
   margin: 2rem 4rem;
-  filter: brightness(0.6);
 }
 
 .slider-wrapper:hover {
-  filter: brightness(1);
   transform: scale(1.1);
 }
 
@@ -138,6 +131,5 @@ a {
   }
   .slider-wrapper {
     margin: 0.5rem 2rem;
-    filter: brightness(1);
   }
 }
