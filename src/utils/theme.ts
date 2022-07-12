@@ -1,5 +1,5 @@
-import { createTheme, ThemeOptions, Theme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
+import { createTheme, ThemeOptions, Theme } from "@mui/material/styles";
 
 import React from "react";
 
@@ -9,6 +9,7 @@ declare module "@mui/material/styles" {
       main: React.CSSProperties["background"];
     };
     cardGradient: React.CSSProperties["background"];
+    cardGradient2: React.CSSProperties["background"];
     linearGradient1: React.CSSProperties["background"];
   }
   interface CustomThemeOptions extends ThemeOptions {
@@ -16,10 +17,12 @@ declare module "@mui/material/styles" {
       main?: React.CSSProperties["background"];
     };
     cardGradient?: React.CSSProperties["background"];
+    cardGradient2?: React.CSSProperties["background"];
     linearGradient1?: React.CSSProperties["background"];
   }
   export function createTheme(options?: CustomThemeOptions): CustomTheme;
 }
+
 //creating a theme instance
 const theme = createTheme({
   gradient: {
@@ -34,6 +37,11 @@ const theme = createTheme({
     45deg,
     #ffffff1a,
     #ffffff66
+  )`,
+  cardGradient2: `linear-gradient(
+    90deg,
+    #3e39391a,
+    #6f70a166
   )`,
   linearGradient1: `linear-gradient(to right,#e94eee 0%,
     #7000ff 25%,

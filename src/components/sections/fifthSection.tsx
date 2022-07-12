@@ -17,7 +17,9 @@ export default function FifthSection(props: ContainerProps) {
       {...otherProps}
     >
       <Stack direction="column" alignItems="center" textAlign="center">
-        <Typography variant="h5">LET'S GET STARTED</Typography>
+        <Typography variant="h5" component="p">
+          LET'S GET STARTED
+        </Typography>
         <Typography
           variant="h2"
           sx={{

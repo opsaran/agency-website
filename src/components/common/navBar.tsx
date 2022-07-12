@@ -54,16 +54,19 @@ export const NavBar = () => {
           disableGutters
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
-          <Link href="/">
-            <Image
-              width={110}
-              height={60}
-              src="/logo.png"
-              alt="BoomLabs"
-              loading="eager"
-              priority={true}
-            />
-          </Link>
+          <Box width="110px" position="relative">
+            <Link href="/" sx={{ position: "relative", maxWidth: "100%" }}>
+              <Image
+                width={110}
+                height={60}
+                src="/logo.png"
+                alt="BoomLabs"
+                loading="eager"
+                layout="responsive"
+                priority={true}
+              />
+            </Link>
+          </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -117,8 +120,11 @@ export const NavBar = () => {
             >
               <NewLink href="/about">About</NewLink>
             </NavButton>
-            <NavButton onClick={handleClose} disabled={router.pathname === "/"}>
-              <NewLink href="/">Blog</NewLink>
+            <NavButton
+              onClick={handleClose}
+              disabled={router.pathname === "/blog"}
+            >
+              <NewLink href="/blog">Blog</NewLink>
             </NavButton>
             <NavButton
               onClick={handleClose}

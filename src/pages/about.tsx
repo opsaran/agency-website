@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { StyledGradientSection } from "../components/common/customHeroGraphic";
 import { CTALinkSmall } from "../components/Items/ctaButton";
@@ -11,7 +11,7 @@ import HeadlineHero from "../components/common/headlinehero";
 export default function About() {
   return (
     <MainLayout pageData={pages!.about}>
-      <StyledGradientSection>
+      <StyledGradientSection sx={{ height: "80vh" }}>
         <Stack
           sx={{
             pl: { xs: "1rem", md: "inherit" },
@@ -25,66 +25,71 @@ export default function About() {
           }}
         >
           <HeadlineHero>We are focused on driving results</HeadlineHero>
-          <Typography variant="h5" color="text.secondary" sx={{ mt: "0.5rem" }}>
+          <Typography
+            variant="h5"
+            component="h3"
+            color="text.secondary"
+            sx={{ mt: "0.5rem" }}
+          >
             Trust. Innovation. Growth
           </Typography>
         </Stack>
       </StyledGradientSection>
       <Container>
-        <Stack
-          direction={{ xs: "column-reverse", md: "row" }}
-          pt={"5rem"}
-          justifyContent={{ xs: "space-around", md: "space-between" }}
+        <Grid
+          container
+          spacing={4}
+          direction={{ md: "row-reverse" }}
           alignItems="center"
+          justifyItems={"space-between"}
+          position="relative"
         >
-          <Stack
-            spacing={2}
-            sx={{
-              maxWidth: { xs: "100%", md: "50%" },
-            }}
-            alignItems={{ xs: "center", md: "flex-start" }}
-            textAlign={{ xs: "center", md: "left" }}
-          >
-            <div>
-              <Typography variant="h4" gutterBottom>
-                The problem we solve
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                It is hard for businesses to find an agency which is dedicated
-                to serve their full stack needs. Businesses are hesitant to
-                contact big agencies to build websites or improve existing one
-                due to high costs and lacklustre support.
-              </Typography>
-            </div>
-            <div>
-              <Typography variant="h4" gutterBottom>
-                Our Vision
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                To build best in class websites and grow with your users. We
-                help you realise your true business potential while serving all
-                your tech needs.
-              </Typography>
-            </div>
-            <CTALinkSmall href="/contact">
-              Get Started <ArrowForwardIcon />
-            </CTALinkSmall>
-          </Stack>
-          <Stack
-            mt={{ xs: "-10rem", md: "0rem" }}
-            pb={{ xs: "3rem", md: "0rem" }}
-          >
+          <Grid item xs={12} md={6} display="block" position="relative">
             <Image
               src="/iconsbanner.webp"
               width={500}
               height={330}
+              layout="responsive"
               alt="Our tech stack"
             />
-          </Stack>
-        </Stack>
+          </Grid>
+          <Grid item xs={12} md={6} textAlign={{ xs: "center", md: "left" }}>
+            <Stack
+              textAlign={{ xs: "center", md: "left" }}
+              alignItems={{ xs: "center", md: "flex-start" }}
+              spacing={2}
+            >
+              <div>
+                <Typography variant="h4" gutterBottom>
+                  The problem we solve
+                </Typography>
+                <Typography variant="body1" color="text.secondary">
+                  It is hard for businesses to find an agency which is dedicated
+                  to serve their full stack needs. Businesses are hesitant to
+                  contact big agencies to build websites or improve existing one
+                  due to high costs and lacklustre support.
+                </Typography>
+              </div>
+              <div>
+                <Typography variant="h4" gutterBottom>
+                  Our Vision
+                </Typography>
+                <Typography variant="body1" color="text.secondary">
+                  To build best in class websites and grow with your users. We
+                  help you realise your true business potential while serving
+                  all your tech needs.
+                </Typography>
+              </div>
+              <CTALinkSmall href="/contact">
+                Get Started <ArrowForwardIcon />
+              </CTALinkSmall>
+            </Stack>
+          </Grid>
+        </Grid>
       </Container>
       <div
         style={{
+          position: "relative",
           width: "100%",
           background: `radial-gradient(ellipse at 100% 50%,#e94eee 5%,
     #7000ff 25%,
@@ -92,38 +97,43 @@ export default function About() {
         }}
       >
         <Container>
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            justifyContent={{ xs: "space-around", md: "space-between" }}
+          <Grid
+            container
+            spacing={4}
             alignItems="center"
+            justifyContent="space-between"
             sx={{ pt: "5rem", pb: "5rem", mt: { xs: "0rem", md: "7rem" } }}
           >
-            <Box
-              sx={{ padding: "2rem" }}
-              mb={{ xs: "3rem", md: "0rem" }}
-              bgcolor="text.secondary"
-            >
-              <div style={{ position: "relative" }}>
+            <Grid item xs={12} sm={5} md={3} mb={{ xs: "3rem", md: "0rem" }}>
+              <Box
+                sx={{ padding: "2rem", width: "100%" }}
+                bgcolor="text.secondary"
+                position="relative"
+              >
                 <Image
-                  src="/founder.webp"
+                  src="/founder.jpg"
                   width={225}
                   height={258}
+                  quality={100}
+                  layout="responsive"
                   alt="Founder"
                 />
                 <Typography
                   variant="body1"
                   position={"absolute"}
-                  sx={{ width: "100%" }}
+                  sx={{ width: "100%", left: 0 }}
                   color="primary.main"
                   textAlign="center"
                 >
-                  <div>OP Saran</div>
+                  OP Saran
                 </Typography>
-              </div>
-            </Box>
-            <Stack
-              spacing={3}
-              sx={{ maxWidth: { xs: "100%", md: "60%" } }}
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={7}
+              md={7}
               textAlign={{ xs: "center", md: "inherit" }}
             >
               <Typography variant="h4">Meet Our Founder</Typography>
@@ -138,8 +148,8 @@ export default function About() {
                 other business using not just NextJs but Webflow and WordPress
                 as well.
               </Typography>
-            </Stack>
-          </Stack>
+            </Grid>
+          </Grid>
         </Container>
       </div>
       <FifthSection sx={{ pt: { xs: "0rem", md: "8rem" }, pb: "7rem" }} />

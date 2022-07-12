@@ -55,7 +55,7 @@ export default function ServicesOffered() {
                 <DevicesIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>
 
-              <Typography variant="h6" sx={{ mb: "1rem" }}>
+              <Typography variant="h6" sx={{ mb: "1rem" }} component="p">
                 Web Development and Design
               </Typography>
               <Typography
@@ -79,7 +79,7 @@ export default function ServicesOffered() {
                 <GoogleIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>
 
-              <Typography variant="h6" sx={{ mb: "1rem" }}>
+              <Typography variant="h6" sx={{ mb: "1rem" }} component="p">
                 Search Engine Optimization
               </Typography>
               <Typography
@@ -103,7 +103,7 @@ export default function ServicesOffered() {
                 <ArticleIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>
 
-              <Typography variant="h6" sx={{ mb: "1rem" }}>
+              <Typography variant="h6" sx={{ mb: "1rem" }} component="p">
                 Copywriting
               </Typography>
               <Typography

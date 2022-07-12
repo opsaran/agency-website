@@ -23,7 +23,11 @@ export default function HeroSection() {
         textAlign={"center"}
         spacing={{ xs: 3, md: 3 }}
       >
-        <Typography variant="h6" sx={{ color: "text.secondary", mb: "-1rem" }}>
+        <Typography
+          variant="h6"
+          component="p"
+          sx={{ color: "text.secondary", mb: "-1rem" }}
+        >
           Take your Business to newer heights!
         </Typography>
         <HeadlineHero>
@@ -31,6 +35,7 @@ export default function HeroSection() {
         </HeadlineHero>
         <Typography
           variant="h5"
+          component="h3"
           sx={{ fontWeight: "300", color: "text.secondary" }}
           gutterBottom
         >

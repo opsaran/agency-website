@@ -46,6 +46,7 @@ const Contact: NextPage = () => {
             <HeadlineHero>Let's do great work together</HeadlineHero>
             <Typography
               variant="h5"
+              component="p"
               color="text.secondary"
               sx={{ mt: "0.5rem" }}
             >
@@ -60,8 +61,10 @@ const Contact: NextPage = () => {
         >
           <Container sx={{ mt: { xs: "-10rem", md: "0rem" } }}>
             <Stack direction="column" alignItems={"center"} textAlign="center">
-              <Typography variant="h4">Drop a Message</Typography>
-              <Typography variant="h6" color="text.secondary">
+              <Typography variant="h4" component="h2">
+                Drop a Message
+              </Typography>
+              <Typography variant="h6" component="h3" color="text.secondary">
                 Want to grow the business? Look nowhere else, we will reply
                 asap. Enter your existing website for audit.
               </Typography>

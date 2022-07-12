@@ -33,6 +33,14 @@ const pages: PagesInterface = {
     link: "https://www.boomlabs.agency/about",
     ogImage: "https://www.boomlabs.agency/ogp.png",
   },
+  blog: {
+    title: "Blog - BoomLabs, Static site generated websites and SEO",
+    description:
+      "BoomLabs blog is best place to learn about modern aspects of web developemt and search engine optimization.",
+    ogType: "article",
+    link: "https://www.boomlabs.agency/blog",
+    ogImage: "https://www.boomlabs.agency/ogp.png",
+  },
 };
 
 export default pages;
