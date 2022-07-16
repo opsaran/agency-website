@@ -24,7 +24,7 @@ export interface Picture {
 }
 
 export interface Content {
-  html: string;
+  raw: any;
 }
 
 export interface CoverImage {

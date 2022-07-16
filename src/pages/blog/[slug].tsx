@@ -27,7 +27,7 @@ const QUERY = gql`
         }
       }
       content {
-        html
+        raw
       }
       coverImage {
         url
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       blogPost: post,
     },
-    revalidate: 5,
+    revalidate: 15,
   };
 };
 
@@ -90,7 +90,7 @@ const BlogPost: NextPage<BlogPostPageProps> = ({ blogPost }) => {
     >
       <BlogFirstSection {...blogPost} />
       <BlogContentSection
-        html={blogPost.content.html}
+        content={blogPost.content.raw}
         title={blogPost.title}
         excerpt={blogPost.excerpt}
         slug={blogPost.slug}
