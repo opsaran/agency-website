@@ -28,7 +28,12 @@ export default function FooterSection() {
   return (
     <div style={{ width: "100%", background: "#ffffff1a" }}>
       <Container sx={{ pt: "4rem", pb: "4rem" }}>
-        <Grid container spacing={2} justifyContent={"space-between"}>
+        <Grid
+          container
+          spacing={2}
+          justifyContent={"space-between"}
+          alignItems="center"
+        >
           <Grid
             item
             xs={12}

@@ -124,7 +124,7 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
             )}`}
             aria-label="Share On Twitter"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <CustomToolTip title="Share on Twitter">
               <CustomTwitterIcon fontSize="large" />
@@ -139,7 +139,7 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
               slug
             )}`}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="Share on LinkedIn"
           >
             <CustomToolTip title="Share on LinkedIn">

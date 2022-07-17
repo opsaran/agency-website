@@ -18,7 +18,7 @@ export default function SecondSection() {
               width={900}
               height={530}
               alt="Website dashboard info"
-              layout="responsive"
+              layout="intrinsic"
             ></Image>
           </Box>
           <Stack

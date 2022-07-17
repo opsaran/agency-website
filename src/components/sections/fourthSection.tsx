@@ -40,7 +40,7 @@ export function FourthSection() {
               src="/fourth_section.webp"
               width={648}
               height={663}
-              layout="responsive"
+              layout="intrinsic"
               alt="Person analysing his growth"
             />
           </Box>
