@@ -72,7 +72,7 @@ const BlogContentSection: React.FunctionComponent<ContentProps> = (props) => {
                       <a
                         href={href}
                         target={openInNewTab ? "_blank" : "_self"}
-                        rel={rel || "noopener noreferrer"}
+                        rel={"noopener noreferrer"}
                         {...rest}
                       >
                         {children}
