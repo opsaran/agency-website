@@ -27,7 +27,13 @@ const CustomInstaIcon = styled(InstagramIcon)(({ theme }) => ({
 export default function FooterSection() {
   return (
     <div style={{ width: "100%", background: "#ffffff1a" }}>
-      <Container sx={{ pt: "4rem", pb: "4rem" }}>
+      <Container
+        sx={{
+          pt: "4rem",
+          pb: "4rem",
+          alignItems: "center",
+        }}
+      >
         <Grid
           container
           spacing={2}
@@ -41,7 +47,11 @@ export default function FooterSection() {
             md={4}
             sx={{ mb: { xs: "1rem", md: "inherit" } }}
           >
-            <Box position="relative" maxWidth="200px">
+            <Box
+              position="relative"
+              maxWidth="200px"
+              sx={{ ml: { xs: "auto", md: "0" }, mr: { xs: "auto", md: "0" } }}
+            >
               <Image
                 src="/logo.png"
                 width={200}
@@ -77,7 +87,12 @@ export default function FooterSection() {
             </Stack>
           </Grid>
           <Grid item xs={12} sm={4} md={4} sx={{ overflow: "hidden" }}>
-            <Stack direction="column" spacing={3}>
+            <Stack
+              direction="column"
+              spacing={3}
+              alignItems="center"
+              textAlign="center"
+            >
               <Typography variant="h6" component="p">
                 Connect with us
               </Typography>

@@ -9,24 +9,38 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import { NextPage } from "next";
 
+import { NextPage } from "next";
+import dynamic from "next/dynamic";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ContactForm from "../components/common/contactForm";
+// import ContactForm from "../components/common/contactForm";
 import { StyledGradientSection } from "../components/common/customHeroGraphic";
 import MainLayout from "../components/layout/mainLayout";
 import pages from "../constants/pages";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { CTAButtonBig } from "../components/Items/ctaButton";
 import HeadlineHero from "../components/common/headlinehero";
+import { useEffect, useRef } from "react";
+import Observers from "../utils/observers";
+
+const ContactForm = dynamic(() => import("../components/common/contactForm"));
+
+const CheckIcon = styled(CheckCircleIcon)(({ theme }) => ({
+  color: (theme as unknown as any).palette.text.secondary,
+}));
+const gradientSection = styled(Box)(({ theme }) => ({
+  width: "100%",
+  background: (theme as unknown as any).palette.text.secondary,
+}));
 const Contact: NextPage = () => {
-  const CheckIcon = styled(CheckCircleIcon)(({ theme }) => ({
-    color: (theme as unknown as any).palette.text.secondary,
-  }));
-  const gradientSection = styled(Box)(({ theme }) => ({
-    width: "100%",
-    background: (theme as unknown as any).palette.text.secondary,
-  }));
+  const growRef = useRef(null);
+  const growRef2 = useRef(null);
+  const buttonRef = useRef(null);
+  useEffect(() => {
+    Observers(growRef.current);
+    Observers(growRef2.current);
+    Observers(buttonRef.current);
+  }, []);
   return (
     <>
       <MainLayout pageData={pages!.contact}>
@@ -49,6 +63,8 @@ const Contact: NextPage = () => {
               component="p"
               color="text.secondary"
               sx={{ mt: "0.5rem" }}
+              ref={growRef}
+              className="grow-out"
             >
               An amazing website awaits...
             </Typography>
@@ -78,6 +94,8 @@ const Contact: NextPage = () => {
             >
               <ContactForm width={{ xs: "100%", md: "40%" }} />
               <Stack
+                ref={growRef2}
+                className="grow-out"
                 direction="column"
                 sx={{
                   maxWidth: { xs: "100%", md: "45%" },
@@ -144,7 +162,7 @@ const Contact: NextPage = () => {
               >
                 Ready to speak directly with us? Schedule a free call.
               </Typography>
-              <CTAButtonBig>
+              <CTAButtonBig ref={buttonRef} className="grow-out">
                 <a
                   href="https://calendly.com/boomlabs-agency/20-minute-discovery-call"
                   target="_blank"

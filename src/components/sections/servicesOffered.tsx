@@ -1,11 +1,4 @@
-import {
-  Stack,
-  Container,
-  Typography,
-  Avatar,
-  Button,
-  Grid,
-} from "@mui/material";
+import { Container, Typography, Avatar, Grid } from "@mui/material";
 import DevicesIcon from "@mui/icons-material/Devices";
 import GoogleIcon from "@mui/icons-material/Google";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -13,6 +6,9 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { styled } from "@mui/material";
 import { CTAButtonBig, CTALinkSmall } from "../Items/ctaButton";
+import Headline1 from "../common/headline1";
+import { useEffect, useRef } from "react";
+import Observers from "../../utils/observers";
 
 const StyledCard = styled("div")(({ theme }) => ({
   background: (theme as unknown as any).cardGradient,
@@ -27,6 +23,14 @@ const StyledCard = styled("div")(({ theme }) => ({
   },
 }));
 export default function ServicesOffered() {
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+  useEffect(() => {
+    Observers(card1Ref.current);
+    Observers(card2Ref.current);
+    Observers(card3Ref.current);
+  }, []);
   return (
     <div
       style={{
@@ -45,12 +49,12 @@ export default function ServicesOffered() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h3" textAlign={"center"} gutterBottom>
+        <Headline1 textAlign={"center"} gutterBottom>
           Services We Offer
-        </Typography>
+        </Headline1>
         <Grid container spacing={6} alignContent="stretch" mt="0rem">
           <Grid item xs={12} sm={6} md={4} alignItems="center">
-            <StyledCard>
+            <StyledCard ref={card1Ref} className="grow-out">
               <Avatar sx={{ width: 56, height: 56, bgcolor: "primary.main" }}>
                 <DevicesIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>
@@ -74,7 +78,7 @@ export default function ServicesOffered() {
             </StyledCard>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <StyledCard>
+            <StyledCard ref={card2Ref} className="grow-out">
               <Avatar sx={{ width: 56, height: 56, bgcolor: "primary.main" }}>
                 <GoogleIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>
@@ -98,7 +102,7 @@ export default function ServicesOffered() {
             </StyledCard>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <StyledCard>
+            <StyledCard ref={card3Ref} className="grow-out">
               <Avatar sx={{ width: 56, height: 56, bgcolor: "primary.main" }}>
                 <ArticleIcon fontSize="large" sx={{ color: "#e94eee" }} />
               </Avatar>

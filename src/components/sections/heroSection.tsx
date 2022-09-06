@@ -1,12 +1,17 @@
 import { Stack, Typography } from "@mui/material";
 
-import React from "react";
+import { useEffect, useRef } from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { CTALinkBig } from "../Items/ctaButton";
 import { StyledGradientSection } from "../common/customHeroGraphic";
 import HeadlineHero from "../common/headlinehero";
-
+import Observers from "../../utils/observers";
 export default function HeroSection() {
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+  useEffect(() => {
+    Observers(buttonRef.current);
+  }, []);
+
   return (
     <StyledGradientSection>
       <Stack
@@ -43,7 +48,7 @@ export default function HeroSection() {
           and bulletproof security.
         </Typography>
 
-        <CTALinkBig href="/contact">
+        <CTALinkBig href="/contact" className="fade-in" ref={buttonRef}>
           Get Started <ArrowForwardIcon />
         </CTALinkBig>
       </Stack>

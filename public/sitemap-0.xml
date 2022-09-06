@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.boomlabs.agency</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/about</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/blog</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/contact</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/blog/how-to-plan-an-seo-campaign-in-10-steps</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/blog/what-is-static-site-generation</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.boomlabs.agency/blog/what-is-conversion-rate-optimization</loc><lastmod>2022-08-26T16:46:54.741Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

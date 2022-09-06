@@ -7,8 +7,19 @@ import FifthSection from "../components/sections/fifthSection";
 import pages from "../constants/pages";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HeadlineHero from "../components/common/headlinehero";
+import TestimonialSection from "../components/sections/testimonialSection";
+import { useEffect, useRef } from "react";
+import Observers from "../utils/observers";
 
 export default function About() {
+  const growRef = useRef(null);
+  const leftRef1 = useRef(null);
+  const rightRef1 = useRef(null);
+  useEffect(() => {
+    Observers(growRef.current);
+    Observers(leftRef1.current);
+    Observers(rightRef1.current);
+  }, []);
   return (
     <MainLayout pageData={pages!.about}>
       <StyledGradientSection sx={{ height: "80vh" }}>
@@ -30,6 +41,8 @@ export default function About() {
             component="h3"
             color="text.secondary"
             sx={{ mt: "0.5rem" }}
+            ref={growRef}
+            className="grow-out"
           >
             Trust. Innovation. Growth
           </Typography>
@@ -44,16 +57,32 @@ export default function About() {
           justifyItems={"space-between"}
           position="relative"
         >
-          <Grid item xs={12} md={6} display="block" position="relative">
+          <Grid
+            item
+            xs={12}
+            md={6}
+            display="block"
+            position="relative"
+            ref={rightRef1}
+            className="from-right"
+          >
             <Image
               src="/iconsbanner.webp"
               width={500}
               height={330}
+              quality={100}
               layout="responsive"
               alt="Our tech stack"
             />
           </Grid>
-          <Grid item xs={12} md={6} textAlign={{ xs: "center", md: "left" }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            textAlign={{ xs: "center", md: "left" }}
+            ref={leftRef1}
+            className="from-left"
+          >
             <Stack
               textAlign={{ xs: "center", md: "left" }}
               alignItems={{ xs: "center", md: "flex-start" }}
@@ -152,7 +181,8 @@ export default function About() {
           </Grid>
         </Container>
       </div>
-      <FifthSection sx={{ pt: { xs: "0rem", md: "8rem" }, pb: "7rem" }} />
+      <TestimonialSection />
+      <FifthSection sx={{ pt: { xs: "4rem", md: "8rem" }, pb: "7rem" }} />
     </MainLayout>
   );
 }

@@ -2,8 +2,14 @@ import { Container, ContainerProps, Stack, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { CTAButtonBig } from "../Items/ctaButton";
+import { useEffect, useRef } from "react";
+import Observers from "../../utils/observers";
 export default function FifthSection(props: ContainerProps) {
   const { children, ...otherProps } = props;
+  const buttonRef = useRef(null);
+  useEffect(() => {
+    Observers(buttonRef.current);
+  }, []);
   return (
     <Container
       sx={{
@@ -33,7 +39,7 @@ export default function FifthSection(props: ContainerProps) {
         >
           Ready to grow your business? We'd love to hear from you
         </Typography>
-        <CTAButtonBig>
+        <CTAButtonBig ref={buttonRef} className="grow-out">
           <a
             href="https://calendly.com/boomlabs-agency/20-minute-discovery-call"
             target="_blank"

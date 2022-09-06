@@ -1,5 +1,5 @@
 import "../../styles/globals.css";
-import Script from "next/script";
+
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -8,6 +8,7 @@ import theme from "../utils/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
+import Script from "next/script";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -20,6 +21,9 @@ export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
     <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         strategy="lazyOnload"
@@ -35,9 +39,6 @@ export default function MyApp(props: MyAppProps) {
       });
     `}
       </Script>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
@@ -46,6 +47,7 @@ export default function MyApp(props: MyAppProps) {
             color={theme.palette.text.primary}
             options={{ showSpinner: false }}
           />
+
           <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>

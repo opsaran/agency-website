@@ -8,6 +8,7 @@ import ServicesOffered from "../components/sections/servicesOffered";
 import pages from "../constants/pages";
 import MainLayout from "../components/layout/mainLayout";
 import Head from "next/head";
+import TestimonialSection from "../components/sections/testimonialSection";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         <MarqueeSection />
         <SecondSection />
         <ServicesOffered />
+        <TestimonialSection />
         <FourthSection />
         <FifthSection />
       </MainLayout>
