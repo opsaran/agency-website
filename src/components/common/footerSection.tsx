@@ -56,7 +56,7 @@ export default function FooterSection() {
                 src="/logo.png"
                 width={200}
                 height={110}
-                layout="responsive"
+                style={{ width: "100%", height: "auto" }}
                 alt="BoomLabs Logo"
               />
             </Box>

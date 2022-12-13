@@ -59,11 +59,10 @@ const BlogContentSection: React.FunctionComponent<ContentProps> = (props) => {
                 img: ({ src, altText, height, width }) => (
                   <Image
                     src={src ? src : "/"}
-                    alt={altText}
+                    alt={altText ? altText : "BoomBlog"}
                     height={height}
                     width={width}
-                    layout="responsive"
-                    objectFit="contain"
+                    style={{ width: "100", height: "auto" }}
                   />
                 ),
                 a: ({ children, openInNewTab, href, rel, ...rest }) => {

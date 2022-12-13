@@ -5,67 +5,25 @@ const MarqueeSection = () => {
   return (
     <Marquee gradientColor={[0, 0, 0]} className={"marquee-wrapper"}>
       <div className="slider-wrapper">
-        <Image
-          src={"/shopify.png"}
-          width={44}
-          height={50}
-          layout="intrinsic"
-          alt="shopify"
-        />
+        <Image src={"/shopify.png"} width={44} height={50} alt="shopify" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/wordpress.png"}
-          width={50}
-          height={50}
-          layout="intrinsic"
-          alt="wordpress"
-        />
+        <Image src={"/wordpress.png"} width={50} height={50} alt="wordpress" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/nextjs.png"}
-          width={100}
-          height={50}
-          layout="intrinsic"
-          alt="nextjs"
-        />
+        <Image src={"/nextjs.png"} width={100} height={50} alt="nextjs" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/webflow.png"}
-          width={199}
-          height={50}
-          layout="intrinsic"
-          alt="webflow"
-        />
+        <Image src={"/webflow.png"} width={199} height={50} alt="webflow" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/reactjs.png"}
-          width={56}
-          height={50}
-          layout="intrinsic"
-          alt="reactjs"
-        />
+        <Image src={"/reactjs.png"} width={56} height={50} alt="reactjs" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/nodejs.png"}
-          width={82}
-          height={50}
-          layout="intrinsic"
-          alt="nodejs"
-        />
+        <Image src={"/nodejs.png"} width={82} height={50} alt="nodejs" />
       </div>
       <div className="slider-wrapper">
-        <Image
-          src={"/figma.png"}
-          width={33}
-          height={50}
-          layout="intrinsic"
-          alt="figma"
-        />
+        <Image src={"/figma.png"} width={33} height={50} alt="figma" />
       </div>
     </Marquee>
   );

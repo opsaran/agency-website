@@ -25,8 +25,8 @@ export default function SecondSection() {
               src={"/second_section.webp"}
               width={900}
               height={530}
+              style={{ width: "100%", height: "auto" }}
               alt="Website dashboard info"
-              layout="intrinsic"
             ></Image>
           </Box>
           <Stack

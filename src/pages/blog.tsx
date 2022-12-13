@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       blogPosts: posts,
     },
-    revalidate: 60,
+    revalidate: 60 * 5,
   };
 };
 

@@ -55,6 +55,12 @@ export default function ContactForm(props: BoxProps) {
     <Box
       sx={{
         flexDirection: "column",
+        padding: "3rem",
+        background: `linear-gradient(
+          45deg,
+          #ffffff1a,
+          #ffffff66
+        )`,
       }}
       {...otherProps}
     >

@@ -11,7 +11,7 @@ import Link from "../../utils/link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { pink } from "@mui/material/colors";
+
 const CustomBox = styled(Box)(({ theme }) => ({
   width: "100%",
   position: "sticky",
@@ -89,7 +89,7 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
             <Box position="relative" sx={{ width: "100%", height: "100%" }}>
               <Image
                 src="/rocketLogo.png"
-                layout="fill"
+                fill
                 objectFit="contain"
                 alt="BoomLabs Logo"
               />

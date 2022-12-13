@@ -71,7 +71,7 @@ export default function About() {
               width={500}
               height={330}
               quality={100}
-              layout="responsive"
+              style={{ width: "100%", height: "auto" }}
               alt="Our tech stack"
             />
           </Grid>
@@ -144,7 +144,7 @@ export default function About() {
                   width={225}
                   height={258}
                   quality={100}
-                  layout="responsive"
+                  style={{ width: "100%", height: "auto" }}
                   alt="Founder"
                 />
                 <Typography

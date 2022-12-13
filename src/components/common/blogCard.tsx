@@ -2,7 +2,6 @@ import {
   Box,
   BoxProps,
   Card,
-  CardActionArea,
   CardActions,
   CardActionsProps,
   CardProps,
@@ -49,7 +48,8 @@ const CustomCardContent = styled(Box)<BoxProps>(({ theme }) => ({
 }));
 
 const CardTitleWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  backgroundColor: "rgba(255, 255, 255, 0.6)",
+  backgroundColor: "rgba(255, 255, 255, 0.5)",
+  backdropFilter: "blur(2px)",
   borderRadius: theme.shape.borderRadius,
   bottom: 0,
   height: "40%",
@@ -88,7 +88,7 @@ const BlogCard: React.FunctionComponent<BlogCardProps> = (props) => {
             src={imageSrc}
             width={1280}
             height={720}
-            layout="responsive"
+            style={{ width: "100%", height: "auto" }}
           />
           <CardTitleWrapper>
             <Typography variant="h5" component="h3" color="primary.main">

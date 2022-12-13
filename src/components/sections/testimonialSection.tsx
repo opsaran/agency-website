@@ -51,9 +51,9 @@ export default function TestimonialSection() {
                 >
                   <Image
                     src="/quoteleft.png"
-                    layout="intrinsic"
                     width={107}
                     height={80}
+                    style={{ width: "100%", height: "auto" }}
                     alt="quote"
                   />
                 </div>
@@ -61,7 +61,7 @@ export default function TestimonialSection() {
               <Typography
                 variant="h6"
                 component="p"
-                sx={{ color: "text.secondary", fontWeight: 300 }}
+                sx={{ color: "text.secondary", fontWeight: 400 }}
               >
                 Working with BoomLabs has put our conversion rates through the
                 roof. I have worked with many agencies but the responsiveness
@@ -96,7 +96,7 @@ export default function TestimonialSection() {
         <Box
           position="relative"
           sx={{
-            width: { xs: "60%", md: "100%" },
+            width: { xs: "60%", md: "30%" },
             ml: "auto",
             mr: "auto",
             textAlign: "center",
@@ -105,11 +105,11 @@ export default function TestimonialSection() {
           className="from-right"
         >
           <Image
-            layout="intrinsic"
             width={281}
             height={316}
             src="/testi2.png"
             quality={100}
+            style={{ width: "100%", height: "auto" }}
             alt="testimonial1"
           />
         </Box>

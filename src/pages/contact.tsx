@@ -77,7 +77,7 @@ const Contact: NextPage = () => {
         >
           <Container sx={{ mt: { xs: "-10rem", md: "0rem" } }}>
             <Stack direction="column" alignItems={"center"} textAlign="center">
-              <Typography variant="h4" component="h2">
+              <Typography variant="h4" component="h2" gutterBottom>
                 Drop a Message
               </Typography>
               <Typography variant="h6" component="h3" color="text.secondary">
@@ -92,7 +92,6 @@ const Contact: NextPage = () => {
               alignItems="center"
               sx={{ pt: "5rem", pb: "5rem" }}
             >
-              <ContactForm width={{ xs: "100%", md: "40%" }} />
               <Stack
                 ref={growRef2}
                 className="grow-out"
@@ -101,6 +100,7 @@ const Contact: NextPage = () => {
                   maxWidth: { xs: "100%", md: "45%" },
                   mt: { xs: "4rem", md: 0 },
                   pt: "1rem",
+                  mb: { xs: "5rem", md: 0 },
                   textAlign: { xs: "center" },
                 }}
                 boxShadow={`5px 5px 25px -5px #7000ff,-5px -5px 25px -5px #e94eee`}
@@ -133,6 +133,7 @@ const Contact: NextPage = () => {
                   </ListItem>
                 </List>
               </Stack>
+              <ContactForm width={{ xs: "100%", md: "40%" }} />
             </Stack>
           </Container>
         </section>

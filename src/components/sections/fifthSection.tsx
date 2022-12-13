@@ -13,8 +13,8 @@ export default function FifthSection(props: ContainerProps) {
   return (
     <Container
       sx={{
-        pt: "8rem",
-        pb: "7rem",
+        pt: { xs: "8rem", md: "12rem" },
+        pb: { xs: "7rem", md: "12rem" },
 
         background: `radial-gradient(circle at center,#e94eee 0%,
       #7000ff 15%,

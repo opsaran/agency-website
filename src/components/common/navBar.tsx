@@ -59,10 +59,10 @@ export const NavBar = () => {
               <Image
                 width={110}
                 height={60}
+                style={{ width: "100%", height: "auto" }}
                 src="/logo.png"
                 alt="BoomLabs"
                 loading="eager"
-                layout="responsive"
                 priority={true}
               />
             </Link>
