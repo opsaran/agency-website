@@ -13,7 +13,7 @@ const graphcms = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_URL}`);
 
 const Query = gql`
   {
-    posts(orderBy: publishedAt_DESC) {
+    posts (orderBy: publishedAt_DESC) {
       id
       title
       slug
