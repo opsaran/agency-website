@@ -40,8 +40,11 @@ const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
                     alt={author.picture.fileName}
                     width={40}
                     height={40}
-                    layout="intrinsic"
-                    style={{ borderRadius: "30%" }}
+                    style={{
+                      borderRadius: "30%",
+                      width: "100%",
+                      height: "auto",
+                    }}
                   />
                 </Box>
                 <LightText>{author.name}</LightText>
@@ -51,13 +54,19 @@ const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
             </Stack>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={6} display="block" position="relative">
+        <Grid item xs={12} md={6} position="relative">
           <Image
             src={coverImage.url}
             alt={coverImage.fileName}
-            width={coverImage.width}
-            height={coverImage.height}
-            layout="responsive"
+            width="1280"
+            height="720"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           />
         </Grid>
       </Grid>

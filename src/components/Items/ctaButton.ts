@@ -11,6 +11,7 @@ export const CTAButtonBig = styled(Button)({
   padding: "1rem 1.8rem",
   width: "max-content",
   fontSize: "1rem",
+  textDecoration: "none",
   "&:hover": {
     backgroundColor: "white",
     color: "black",
@@ -27,6 +28,7 @@ export const CTAButtonSmall = styled(Button)({
   padding: "0.5rem 1rem",
   width: "max-content",
   fontSize: "1rem",
+  textDecoration: "none",
   "&:hover": {
     backgroundColor: "white",
     color: "black",
@@ -46,6 +48,7 @@ export const CTALinkBig = styled(Link)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
+  textDecoration: "none",
   "&:hover": {
     backgroundColor: "white",
     color: "black",
@@ -66,6 +69,7 @@ export const CTALinkSmall = styled(Link)<LinkProps>({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
+  textDecoration: "none",
   "&:hover": {
     backgroundColor: "white",
     color: "black",
@@ -84,6 +88,7 @@ export const BlogCardLink = styled(Link)<LinkProps>({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
+  textDecoration: "none",
   "&:hover": {
     backgroundColor: "black",
     color: "white",

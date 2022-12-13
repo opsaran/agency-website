@@ -1,7 +1,20 @@
 import { red } from "@mui/material/colors";
 import { createTheme, ThemeOptions, Theme } from "@mui/material/styles";
 
-import React from "react";
+import { Noto_Serif, Work_Sans } from "@next/font/google";
+
+export const notoSerif = Noto_Serif({
+  weight: ["700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["serif"],
+});
+export const roboto = Work_Sans({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"],
+});
 
 declare module "@mui/material/styles" {
   interface CustomTheme extends Theme {
@@ -74,17 +87,28 @@ const theme = createTheme({
         },
       },
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: "none",
+        },
+      },
+    },
+  },
+  typography: {
+    fontFamily: roboto.style.fontFamily,
   },
 });
 
 theme.typography.h2 = {
   fontSize: "3rem",
-  fontFamily: "'Noto Serif', serif",
+  fontFamily: notoSerif.style.fontFamily,
   lineHeight: "3rem",
 };
 
 theme.typography.h3 = {
   fontSize: "2.8rem",
-  fontFamily: "'Noto Serif', serif",
+  fontFamily: notoSerif.style.fontFamily,
 };
+
 export default theme;

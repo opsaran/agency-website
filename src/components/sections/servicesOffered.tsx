@@ -35,7 +35,7 @@ export default function ServicesOffered() {
     <div
       style={{
         width: "100%",
-        background: `radial-gradient(ellipse at 100% 50%,#e94eee 5%,
+        background: `radial-gradient(ellipse at 100% 50%,e94eee4a 5%,
     #7000ff 25%,
     black 50%)`,
       }}

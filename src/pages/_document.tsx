@@ -1,12 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import theme from "../utils/theme";
+import theme, { roboto } from "../utils/theme";
 import createEmotionCache from "../utils/createEmotionCache";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className={roboto.className}>
         <Head>
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
@@ -20,14 +20,7 @@ export default class MyDocument extends Document {
           <meta name="twitter:creator" content="@lifeofop"></meta>
           <meta name="twitter:site" content="@goboomlabs"></meta>
           <link rel="shortcut icon" href="/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap"
-            rel="stylesheet"
-          ></link>
+          <meta name="emotion-insertion-point" content="" />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}
         </Head>

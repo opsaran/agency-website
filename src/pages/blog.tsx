@@ -13,7 +13,7 @@ const graphcms = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_URL}`);
 
 const Query = gql`
   {
-    posts {
+    posts(orderBy: publishedAt_DESC) {
       id
       title
       slug
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       blogPosts: posts,
     },
-    revalidate: 30,
+    revalidate: 60 * 5,
   };
 };
 

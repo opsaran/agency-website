@@ -28,7 +28,7 @@ export function FourthSection() {
               src="/fourth_section.webp"
               width={648}
               height={663}
-              layout="intrinsic"
+              style={{ width: "100%", height: "auto" }}
               alt="Person analysing his growth"
             />
           </Box>
@@ -42,7 +42,11 @@ export function FourthSection() {
             alignItems={{ xs: "center", md: "inherit" }}
           >
             <Headline1>Fast, Blazing Fast!</Headline1>
-            <Typography variant="body1" color="text.secondary">
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              textAlign="center"
+            >
               Wordpress is old, slow and requires a lot of maintainance. We use
               new age Technologies like NextJs and Webflow to build super fast
               websites. This is essential in capturing massive amounts of leads
