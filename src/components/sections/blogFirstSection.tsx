@@ -8,10 +8,9 @@ const LightText = styled("p")(({ theme }) => ({
 }));
 
 const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
-  const { title, excerpt, publishedAt, readTime, id, author, coverImage } =
-    props;
+  const { title, excerpt, updatedAt, readTime, id, author, coverImage } = props;
 
-  const parsed = dayjs(publishedAt).format("MMMM, D YYYY");
+  const parsed = dayjs(updatedAt).format("MMMM, D YYYY");
   return (
     <Container sx={{ mt: { xs: "6rem", md: "9rem" } }}>
       <Grid container spacing={4} alignItems="center">

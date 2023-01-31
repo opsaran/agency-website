@@ -1,14 +1,19 @@
 import type { NextPage } from "next";
 import FifthSection from "../components/sections/fifthSection";
-import { FourthSection } from "../components/sections/fourthSection";
+
 import HeroSection from "../components/sections/heroSection";
 import MarqueeSection from "../components/sections/marqueeSection";
 import SecondSection from "../components/sections/secondSection";
-import ServicesOffered from "../components/sections/servicesOffered";
+
 import pages from "../constants/pages";
 import MainLayout from "../components/layout/mainLayout";
 import Head from "next/head";
 import TestimonialSection from "../components/sections/testimonialSection";
+import DesignSection from "../components/sections/designsSection";
+
+import NumberSection1 from "../components/sections/numberSection1";
+
+import ServicesSection from "../components/sections/servicesSection";
 
 const Home: NextPage = () => {
   return (
@@ -21,11 +26,14 @@ const Home: NextPage = () => {
       </Head>
       <MainLayout pageData={pages!.home}>
         <HeroSection />
-        <MarqueeSection />
+
+        <NumberSection1 />
         <SecondSection />
-        <ServicesOffered />
+        <MarqueeSection />
+        <ServicesSection />
+        <DesignSection />
         <TestimonialSection />
-        <FourthSection />
+
         <FifthSection />
       </MainLayout>
     </>

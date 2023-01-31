@@ -1,5 +1,8 @@
 import { GraphQLClient, gql } from "graphql-request";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Error from "next/error";
+
+import { useRouter } from "next/router";
 import MainLayout from "../../components/layout/mainLayout";
 import BlogContentSection from "../../components/sections/blogContentSection";
 import BlogFirstSection from "../../components/sections/blogFirstSection";
@@ -14,7 +17,7 @@ const QUERY = gql`
       id
       title
       slug
-      publishedAt
+      updatedAt
       readTime
       excerpt
       author {
@@ -58,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { posts } = await graphcms.request(SLUGLIST);
   return {
     paths: posts.map((post: any) => ({ params: { slug: post.slug } })),
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -69,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       blogPost: post,
     },
-    revalidate: 60 * 5,
+    revalidate: 300,
   };
 };
 
@@ -78,25 +81,35 @@ interface BlogPostPageProps {
 }
 
 const BlogPost: NextPage<BlogPostPageProps> = ({ blogPost }) => {
+  const router = useRouter();
+  if (!router.isFallback && !blogPost?.slug) {
+    return <Error statusCode={404} />;
+  }
   return (
-    <MainLayout
-      pageData={{
-        title: blogPost.seo?.title,
-        description: blogPost.seo?.description,
-        link: `https://www.boomlabs.agency/blog/${blogPost.slug}`,
-        ogType: "article",
-        ogImage: blogPost.seo.image?.url,
-      }}
-    >
-      <BlogFirstSection {...blogPost} />
-      <BlogContentSection
-        content={blogPost.content.raw}
-        title={blogPost.title}
-        excerpt={blogPost.excerpt}
-        slug={blogPost.slug}
-      />
-      <FifthSection></FifthSection>
-    </MainLayout>
+    <>
+      {router.isFallback ? (
+        <h2>Loading…</h2>
+      ) : (
+        <MainLayout
+          pageData={{
+            title: blogPost.seo?.title,
+            description: blogPost.seo?.description,
+            link: `https://www.boomlabs.agency/blog/${blogPost.slug}`,
+            ogType: "article",
+            ogImage: blogPost.seo.image?.url,
+          }}
+        >
+          <BlogFirstSection {...blogPost} />
+          <BlogContentSection
+            content={blogPost.content.raw}
+            title={blogPost.title}
+            excerpt={blogPost.excerpt}
+            slug={blogPost.slug}
+          />
+          <FifthSection></FifthSection>
+        </MainLayout>
+      )}
+    </>
   );
 };
 

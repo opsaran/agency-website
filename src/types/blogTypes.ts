@@ -6,7 +6,7 @@ export interface BlogPost {
   catagory: BlogPostType[];
   date: string;
   id: string;
-  readTime: number;
+  updatedAt: any;
   image: ImageProps;
   title: string;
 }
@@ -47,7 +47,7 @@ export interface BlogPostInterface {
   id: string;
   title: string;
   slug: string;
-  publishedAt: any;
+  updatedAt: any;
   excerpt: string;
   readTime: number;
   author: Author;

@@ -1,7 +1,8 @@
-import { Grid, Grow, Typography } from "@mui/material";
+import { Container, Grid, Grow, Typography } from "@mui/material";
 import { GraphQLClient, gql } from "graphql-request";
 import { GetStaticProps, NextPage } from "next";
-import BlogCard from "../components/common/blogCard";
+import ABlogCard from "../components/common/aBlogCard";
+
 import CenterBox from "../components/common/centerBox";
 import HeadlineHero from "../components/common/headlinehero";
 import MainLayout from "../components/layout/mainLayout";
@@ -13,11 +14,11 @@ const graphcms = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_URL}`);
 
 const Query = gql`
   {
-    posts(orderBy: publishedAt_DESC) {
+    posts(orderBy: updatedAt_DESC) {
       id
       title
       slug
-      readTime
+      updatedAt
       coverImage {
         url
         fileName
@@ -32,7 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       blogPosts: posts,
     },
-    revalidate: 60 * 5,
+    revalidate: 300,
   };
 };
 
@@ -41,7 +42,7 @@ interface blogPost {
   title: string;
 
   slug: string;
-  readTime: number;
+  updatedAt: any;
   coverImage: {
     url: string;
     fileName: string;
@@ -62,30 +63,23 @@ const Blog: NextPage<BlogPostsProps> = ({ blogPosts }) => {
         <HeadlineHero>Let's Go Boom</HeadlineHero>
       </CenterBox>
       {blogPosts && (
-        <Grid
-          container
-          spacing={8}
-          rowSpacing={10}
-          sx={{ padding: { xs: "1rem", sm: "2rem" } }}
-        >
-          {blogPosts.map((post, index) => (
-            <Grow in={true} key={post.id} timeout={(index + 1) * 500}>
-              <Grid item xs={12} sm={6} md={4} lg={4}>
-                <BlogCard
-                  href={`/blog/${post.slug}`}
-                  readTime={post.readTime}
-                  imageAlt={post.coverImage.fileName}
-                  imageSrc={post.coverImage.url}
-                  title={post.title}
-                  sx={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                  }}
-                ></BlogCard>
-              </Grid>
-            </Grow>
-          ))}
-        </Grid>
+        <Container maxWidth="lg">
+          <Grid container columnSpacing={10} rowSpacing={20} padding={"0px"}>
+            {blogPosts.map((post, index) => (
+              <Grow in={true} key={post.id} timeout={(index + 1) * 500}>
+                <Grid item xs={12} md={6}>
+                  <ABlogCard
+                    href={`/blog/${post.slug}`}
+                    date={`${post.updatedAt}`}
+                    imageAlt={post.coverImage.fileName}
+                    imageSrc={post.coverImage.url}
+                    title={post.title}
+                  ></ABlogCard>
+                </Grid>
+              </Grow>
+            ))}
+          </Grid>
+        </Container>
       )}
       <FifthSection />
     </MainLayout>

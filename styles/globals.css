@@ -5,7 +5,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: black;
-  overflow-x: hidden;
 }
 
 a {
@@ -15,103 +14,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media screen and (max-width: 768px) {
-  .con_right {
-    display: none;
-  }
-}
-
-.animate .ani_stf_circle {
-  position: absolute;
-  top: 8rem;
-  right: 5rem;
-  animation: float_a 8s ease-in-out infinite;
-}
-
-.animate .ani_stf_code {
-  position: absolute;
-  top: 4rem;
-  right: 26%;
-  animation: float_b 6s ease-in-out 1s infinite alternate;
-}
-
-.animate .ani_stf_pie {
-  position: absolute;
-
-  bottom: 4rem;
-  right: 7rem;
-  animation: float_a 10s ease-in-out 1s infinite alternate;
-}
-
-.animate .ani_stf_dot {
-  position: absolute;
-  bottom: -2rem;
-  left: 60%;
-  animation: float_b 8s ease-in-out 0.5s infinite alternate;
-}
-
-.animate .ani_pn_chart {
-  position: absolute;
-  top: 3rem;
-  left: 15rem;
-  animation: float_c 6s ease-in-out infinite alternate;
-}
-
-.animate .ani_pn_code {
-  position: absolute;
-  bottom: 3rem;
-  left: 7rem;
-  animation: float_c 8s ease-in-out 0.5s infinite;
-}
-
-@keyframes float_a {
-  0% {
-    transform: none;
-  }
-  25% {
-    transform: translate(5px, -8px) scale(1.05) rotate(-10deg);
-  }
-  50% {
-    transform: translate(3px) scale(1) rotate(0);
-  }
-  75% {
-    transform: translate(5px, -8px) scale(1) rotate(8deg);
-  }
-  to {
-    transform: none;
-  }
-}
-
-@keyframes float_b {
-  0% {
-    transform: none;
-  }
-  33% {
-    transform: translate(-6px, 6px) rotate(-5deg);
-  }
-  66% {
-    transform: translate(-4px, -5px) rotate(-3deg);
-  }
-  to {
-    transform: translate(-1px, 5px) rotate(0);
-  }
-}
-
-@keyframes float_c {
-  0% {
-    transform: none;
-  }
-  33% {
-    transform: translate(-2px, 5px);
-  }
-  66% {
-    transform: translate(2px, -5px);
-  }
-  to {
-    transform: none;
-  }
 }
 
 .slider-wrapper {
@@ -166,10 +68,52 @@ a {
 .grow-out {
   opacity: 0;
   transform: scale(0.7);
-  transition: transform 250ms ease-in, opacity 250ms ease-in;
+  transition: transform 250ms ease-in;
 }
 
 .grow-out.appear {
   opacity: 1;
   transform: scale(1);
 }
+
+.gradient-button {
+  animation: play 1.6s ease-in infinite;
+}
+
+@keyframes play {
+  0% {
+    background-position: 0px;
+  }
+  20% {
+    background-position: -110px;
+  }
+  35% {
+    background-position: -180px;
+  }
+  50% {
+    background-position: -210px;
+  }
+  80% {
+    background-position: -350px;
+  }
+  100% {
+    background-position: -390px;
+  }
+}
+
+.hero-headline-anim {
+  background: linear-gradient(-45deg, #ffffff 0%, #e94eee 10%, #ffffff 40%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-anim > span {
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+span.text-fade {
+  opacity: 1;
+}
+

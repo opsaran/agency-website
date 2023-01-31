@@ -1,0 +1,75 @@
+.hero_headline_main {
+  --purple: #16b111;
+  --violet: #8fff00;
+  --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+
+@keyframes scale {
+  from,
+  to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.magic {
+  display: inline-block;
+  position: relative;
+}
+.magic > .magic_star {
+  --size: clamp(20px, 1.5vw, 30px);
+
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+.magic > .magic_star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+.magic > .magic_star > svg > path {
+  fill: var(--violet);
+}
+
+.magic > .magic_text {
+  --bg-size: 400%;
+
+  background: linear-gradient(
+      90deg,
+      var(--purple),
+      var(--violet),
+      var(--purple)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}

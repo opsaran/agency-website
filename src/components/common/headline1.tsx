@@ -1,10 +1,11 @@
 import { Typography, TypographyProps } from "@mui/material";
-// export const HeadlineHero = styled(Typography)(({theme})=>({
+import Banner from "../Items/textanimate";
 
-// }))
-
-export default function Headline1(props: TypographyProps) {
-  const { children, ...otherProps } = props;
+interface HeadlineProps extends TypographyProps {
+  animate?: boolean;
+}
+export default function Headline1(props: HeadlineProps) {
+  const { children, animate, ...otherProps } = props;
   return (
     <Typography
       variant="h2"
@@ -14,7 +15,7 @@ export default function Headline1(props: TypographyProps) {
       }}
       {...otherProps}
     >
-      {children}
+      {animate ? <Banner>{children}</Banner> : children}
     </Typography>
   );
 }

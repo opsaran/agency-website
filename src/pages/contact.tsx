@@ -22,6 +22,7 @@ import { CTAButtonBig } from "../components/Items/ctaButton";
 import HeadlineHero from "../components/common/headlinehero";
 import { useEffect, useRef } from "react";
 import Observers from "../utils/observers";
+import FifthSection from "../components/sections/fifthSection";
 
 const ContactForm = dynamic(() => import("../components/common/contactForm"));
 
@@ -103,31 +104,31 @@ const Contact: NextPage = () => {
                   mb: { xs: "5rem", md: 0 },
                   textAlign: { xs: "center" },
                 }}
-                boxShadow={`5px 5px 25px -5px #7000ff,-5px -5px 25px -5px #e94eee`}
+                boxShadow={`0px 0px 20px 0px rgba(112, 0, 255, 0.19), 0px 0px 6px 0px rgba(112, 0, 255, 0.23)`}
               >
                 <Typography variant="h4">Why us?</Typography>
                 <List>
                   <ListItem>
                     <ListItemIcon>
-                      <CheckIcon />
+                      <CheckIcon sx={{ color: "#e94eee" }} />
                     </ListItemIcon>
                     <ListItemText primary="We use NextJs to build server side generated websites, which are super fast." />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <CheckIcon />
+                      <CheckIcon sx={{ color: "#7000ff" }} />
                     </ListItemIcon>
                     <ListItemText primary="We take care of technical SEO during the development process resulting in organic growth on the go." />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <CheckIcon />
+                      <CheckIcon sx={{ color: "#e94eee" }} />
                     </ListItemIcon>
                     <ListItemText primary="Our SEO services are designed to put you on the first page of Google. From keyword research, backlink generation to content creation, we customize to suit your demands." />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
-                      <CheckIcon />
+                      <CheckIcon sx={{ color: "#7000ff" }} />
                     </ListItemIcon>
                     <ListItemText primary="We can improve your existing Wordpress site for better speed and SEO. " />
                   </ListItem>
@@ -137,45 +138,8 @@ const Contact: NextPage = () => {
             </Stack>
           </Container>
         </section>
-        <section
-          style={{
-            width: "100%",
-          }}
-        >
-          <Container>
-            <Stack
-              direction={"column"}
-              sx={{ pt: "7rem", pb: "7rem" }}
-              alignItems="center"
-              textAlign={"center"}
-              position="relative"
-            >
-              <Typography
-                variant="h2"
-                sx={{
-                  fontSize: { xs: "2.5rem", md: "3rem" },
-                  lineHeight: { xs: "3rem", md: "inherit" },
-                  background:
-                    "linear-gradient(45deg,#ff61d5 10%,#ffffff 67%,#00f0ff 76%,#1e43ff)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Ready to speak directly with us? Schedule a free call.
-              </Typography>
-              <CTAButtonBig ref={buttonRef} className="grow-out">
-                <a
-                  href="https://calendly.com/boomlabs-agency/20-minute-discovery-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule Free 1:1 Call
-                </a>{" "}
-                <ArrowForwardIcon />
-              </CTAButtonBig>
-            </Stack>
-          </Container>
-        </section>
+
+        <FifthSection />
       </MainLayout>
     </>
   );
