@@ -1,14 +1,15 @@
 import { red } from "@mui/material/colors";
 import { createTheme, ThemeOptions, Theme } from "@mui/material/styles";
 
-import { Noto_Serif, Work_Sans } from "@next/font/google";
+import { Work_Sans, Manrope } from "@next/font/google";
 
-export const notoSerif = Noto_Serif({
+export const manrope = Manrope({
   weight: ["700"],
   subsets: ["latin"],
   display: "swap",
   fallback: ["serif"],
 });
+
 export const roboto = Work_Sans({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
@@ -48,8 +49,8 @@ const theme = createTheme({
   },
   cardGradient: `linear-gradient(
     45deg,
-    #ffffff1a,
-    #ffffff66
+    #6867671a,
+    #32323266
   )`,
   cardGradient2: `linear-gradient(
     90deg,
@@ -65,7 +66,9 @@ const theme = createTheme({
     },
     secondary: {
       main: "#e94eee",
+      contrastText: "#7000ff",
     },
+
     error: {
       main: red.A400,
     },
@@ -91,6 +94,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textDecoration: "none",
+          color: "inherit",
         },
       },
     },
@@ -102,13 +106,16 @@ const theme = createTheme({
 
 theme.typography.h2 = {
   fontSize: "3rem",
-  fontFamily: notoSerif.style.fontFamily,
+  fontFamily: manrope.style.fontFamily,
   lineHeight: "3rem",
+  wordSpacing: "0.5rem",
 };
 
 theme.typography.h3 = {
   fontSize: "2.8rem",
-  fontFamily: notoSerif.style.fontFamily,
+  fontFamily: manrope.style.fontFamily,
 };
-
+theme.typography.body1 = {
+  fontSize: "1.15rem",
+};
 export default theme;

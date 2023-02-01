@@ -1,30 +1,45 @@
-import { Container, ContainerProps, Stack, Typography } from "@mui/material";
+import {
+  Container,
+  ContainerProps,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { CTAButtonBig } from "../Items/ctaButton";
-import { useEffect, useRef } from "react";
-import Observers from "../../utils/observers";
+
+import { motion } from "framer-motion";
+
+const CustomContainer = styled(Container)(({ theme }) => ({
+  position: "relative",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    width: "8rem",
+    height: "8rem",
+    left: "50%",
+    transform: "translateX(-50%)",
+    top: "9rem",
+    filter: "blur(90px)",
+    backgroundColor: "#7000ff",
+  },
+}));
+
 export default function FifthSection(props: ContainerProps) {
   const { children, ...otherProps } = props;
-  const buttonRef = useRef(null);
-  useEffect(() => {
-    Observers(buttonRef.current);
-  }, []);
+
   return (
-    <Container
+    <CustomContainer
       sx={{
         pt: { xs: "8rem", md: "12rem" },
         pb: { xs: "7rem", md: "12rem" },
-
-        background: `radial-gradient(circle at center,#e94eee 0%,
-      #7000ff 15%,
-      black 30%)`,
       }}
       {...otherProps}
     >
       <Stack direction="column" alignItems="center" textAlign="center">
-        <Typography variant="h5" component="p">
-          LET'S GET STARTED
+        <Typography variant="h5" component="p" mb="1rem">
+          LET's GET STARTED
         </Typography>
         <Typography
           variant="h2"
@@ -36,20 +51,22 @@ export default function FifthSection(props: ContainerProps) {
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
+          mb="2rem"
         >
-          Ready to grow your business? We'd love to hear from you
+          Transform Your Ideas into Reality with BoomLabs
         </Typography>
-        <CTAButtonBig ref={buttonRef} className="grow-out">
-          <a
-            href="https://calendly.com/boomlabs-agency/20-minute-discovery-call"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <motion.div
+          initial={{ opacity: 0.5, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ margin: "-10%" }}
+          transition={{ ease: "easeInOut" }}
+        >
+          <CTAButtonBig>
             SETUP A FREE MEETING
-          </a>
-          <ArrowForwardIcon />
-        </CTAButtonBig>
+            <ArrowForwardIcon />
+          </CTAButtonBig>
+        </motion.div>
       </Stack>
-    </Container>
+    </CustomContainer>
   );
 }

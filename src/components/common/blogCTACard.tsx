@@ -16,17 +16,31 @@ const CustomBox = styled(Box)(({ theme }) => ({
   width: "100%",
   position: "sticky",
   top: "20%",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    width: "123px",
+    height: "123px",
+    right: "20%",
+    top: "20rem",
+    filter: "blur(90px)",
+    backgroundColor: "#e94eee",
+  },
 }));
 
 const CustomBox2 = styled(Box)(({ theme }) => ({
+  position: "relative",
   clipPath: "polygon(0 0, 100% 0, 100% 75%, 79% 100%, 0 100%)",
-  background: (theme as unknown as any).cardGradient,
-  borderRadius: "7px",
+
   width: "100%",
   height: "20rem",
-  transition: "all ease-in 500ms",
+  transition: "all ease-in 250ms",
+  boxShadow: "20px 20px 50px rgba(0,0,0, 0.5)",
+  borderRadius: "15px",
+  borderTop: "1px solid rgba(255,255,255,0.5)",
+  borderLeft: "1px solid rgba(255,255,255,0.5)",
+  background: "rgba(255,255,255,0.1)",
   "&:hover": {
-    background: (theme as unknown as any).cardGradient2,
     clipPath: "polygon(0 0, 100% 0, 100% 89%, 88% 100%, 0 100%)",
   },
 }));
@@ -35,6 +49,7 @@ const CustomBox3 = styled(Stack)(({ theme }) => ({
   width: "100%",
   height: "100%",
   padding: "2rem",
+  position: "relative",
 }));
 
 const CustomToolTip = styled(Tooltip)(({ theme }) => ({
@@ -76,6 +91,7 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
             <Typography
               variant="body1"
               sx={{
+                color: "text.primary",
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
@@ -83,14 +99,17 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
             >
               Let's Get Started <ArrowForwardIcon />
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" sx={{ color: "text.secondary" }}>
               We build websites which are fast, beautiful and SEO freindly.
             </Typography>
-            <Box position="relative" sx={{ width: "100%", height: "100%" }}>
+            <Box
+              position="relative"
+              sx={{ width: "100%", height: "100%", display: "flex" }}
+            >
               <Image
                 src="/rocketLogo.png"
                 fill
-                objectFit="contain"
+                style={{ width: "100%", objectFit: "contain" }}
                 alt="BoomLabs Logo"
               />
             </Box>
@@ -104,8 +123,8 @@ const BlogCTACard: React.FunctionComponent<CardProps> = (props) => {
         sx={{
           background: `linear-gradient(
             45deg,
-            #ffffff1a,
-            #ffffff66
+            #6867671a,
+            #32323266
           )`,
           clipPath: "polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%)",
           width: { xs: "90%", md: "80%" },

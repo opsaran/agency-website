@@ -61,6 +61,8 @@ export default function ContactForm(props: BoxProps) {
           #ffffff1a,
           #ffffff66
         )`,
+        boxShadow:
+          "0px 0px 20px 0px rgba(233, 78, 238, 0.19), 0px 0px 6px 0px rgba(233, 78, 238, 0.23)", //0px 0px 20px 0px rgba(233, 78, 238, 0.19), 0px 0px 6px 0px rgba(233, 78, 238, 0.23)
       }}
       {...otherProps}
     >

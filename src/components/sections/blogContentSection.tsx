@@ -16,42 +16,60 @@ type RawContentType = {
 };
 
 const CustomDiv = styled("div")(({ theme }) => ({
+  fontSize: "1.25rem",
   a: {
     textDecoration: "underline",
-    textDecorationColor: theme.palette.secondary.main,
+    textDecorationColor: "#e94eee",
+    textDecorationThickness: "3px",
   },
   p: {
     color: theme.palette.text.secondary,
-    fontSize: "18px",
-    lineHeight: "1.667em",
+
+    lineHeight: "1.7em",
     fontWeight: "400",
-    letterSpacing: "-.005em",
-    marginBottom: "20px",
+    // letterSpacing: "-.005em",
+    marginBottom: "35px",
   },
 
   h2: {
     marginBottom: "1rem",
     marginTop: "5rem",
+    fontSize: "2rem",
+    color: "#e94eee",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.5em",
+      fontSize: "1.6rem",
     },
   },
   li: {
     color: theme.palette.text.secondary,
-    fontSize: "18px",
+
     lineHeight: "1.667em",
     fontWeight: "400",
     letterSpacing: "-.005em",
     marginBottom: "15px",
+    width: "100%",
+    position: "relative",
+  },
+  ul: {
+    width: "100%",
+    position: "relative",
+    display: "block",
+  },
+  ol: {
+    width: "100%",
+    position: "relative",
+    display: "block",
   },
 }));
 
 const BlogContentSection: React.FunctionComponent<ContentProps> = (props) => {
   const { content, title, excerpt, slug } = props;
   return (
-    <Container sx={{ mt: { xs: "1rem", md: "5rem" } }}>
+    <Container
+      sx={{ mt: { xs: "1rem", md: "5rem" }, mb: { xs: "2rem", md: "4rem" } }}
+    >
       <Grid container spacing={6}>
-        <Grid item xs={12} sm={9} md={8}>
+        <Grid item xs={12} sm={9} md={8} display="block" position="relative">
           <CustomDiv>
             <RichText
               content={content}
@@ -62,7 +80,11 @@ const BlogContentSection: React.FunctionComponent<ContentProps> = (props) => {
                     alt={altText ? altText : "BoomBlog"}
                     height={height}
                     width={width}
-                    style={{ width: "100", height: "auto" }}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
                   />
                 ),
                 a: ({ children, openInNewTab, href, rel, ...rest }) => {

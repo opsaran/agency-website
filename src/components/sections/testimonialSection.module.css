@@ -1,0 +1,39 @@
+.person {
+  max-width: 15rem;
+  position: relative;
+  margin-inline: auto;
+}
+
+.person_container {
+  aspect-ratio: 1/1.2;
+  display: grid;
+  align-items: end;
+  border-radius: 0 0 100vw 100vw;
+  overflow: hidden;
+  transition: transform 250ms ease;
+}
+
+.person_container:hover {
+  transform: scale(1.08);
+}
+
+.person_circle {
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 50%;
+  background-image: radial-gradient(#e94eee, #7000ff);
+
+  border: 7px solid #f1efef1a;
+  border-style: ridge;
+}
+
+.person_img {
+  z-index: 2;
+  transform: translateY(1rem);
+  transition: transform 300ms ease;
+}
+
+.person_container:hover .person_img {
+  transform: translateY(0);
+}

@@ -49,7 +49,7 @@ export const NavBar = () => {
         backdropFilter: "blur(2px)",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar
           disableGutters
           sx={{ display: "flex", justifyContent: "space-between" }}
