@@ -4,6 +4,7 @@ import { styled, Stack } from "@mui/material";
 export const StyledGradientSection = styled("section")(({ theme }) => ({
   // background: (theme as unknown as any).gradient.main,
   position: "relative",
+  overflowX: "hidden",
   "&::before": {
     content: '""',
     position: "absolute",

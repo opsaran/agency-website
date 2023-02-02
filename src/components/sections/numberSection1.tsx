@@ -6,7 +6,6 @@ export default function NumberSection1() {
   return (
     <Container
       sx={{
-        mt: { xs: "4rem", md: "7rem" },
         mb: { xs: "4rem", md: "7rem" },
         pl: { xs: 0, md: "2rem" },
         pr: { xs: 0, md: "2rem" },

@@ -40,6 +40,15 @@ const CustomDiv = styled("div")(({ theme }) => ({
       fontSize: "1.6rem",
     },
   },
+  h3: {
+    marginBottom: "0.8rem",
+    marginTop: "2.5rem",
+    fontSize: "1.9rem",
+    color: "#e94eee",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.4rem",
+    },
+  },
   li: {
     color: theme.palette.text.secondary,
 

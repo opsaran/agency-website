@@ -30,21 +30,20 @@ export function HeadlineHero1(props: TypographyProps) {
   const rand = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
-  const animate = (star: HTMLSpanElement) => {
-    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
-    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
-
-    star.style.animation = "none";
-    star.offsetHeight;
-    star.style.animation = "";
-  };
-
   const intervalsRef = useRef<any>([]);
 
   useEffect(() => {
     if (!ref1.current) return;
     let index = 0;
     let interval = 1000;
+    const animate = (star: HTMLSpanElement) => {
+      star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+      star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+      star.style.animation = "none";
+      star.offsetHeight;
+      star.style.animation = "";
+    };
 
     const observer = new IntersectionObserver((entries) => {
       for (let i = 0; i < entries.length; i++) {

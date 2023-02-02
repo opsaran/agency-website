@@ -10,7 +10,7 @@ import FifthSection from "../components/sections/fifthSection";
 import pages from "../constants/pages";
 // import { blogPosts } from "../constants/blogPosts";
 
-const graphcms = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_URL}`);
+const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_URL}`);
 
 const Query = gql`
   {
@@ -33,7 +33,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       blogPosts: posts,
     },
-    revalidate: 300,
   };
 };
 
@@ -74,6 +73,7 @@ const Blog: NextPage<BlogPostsProps> = ({ blogPosts }) => {
                     imageAlt={post.coverImage.fileName}
                     imageSrc={post.coverImage.url}
                     title={post.title}
+                    index={index}
                   ></ABlogCard>
                 </Grid>
               </Grow>
