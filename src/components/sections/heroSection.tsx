@@ -19,6 +19,7 @@ export default function HeroSection() {
             md: "186px 0 30px",
           },
           margin: "0 auto",
+          mb: { xs: "4rem", md: "7rem" },
         }}
         width="100%"
         height={"100%"}

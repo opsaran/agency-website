@@ -6,11 +6,12 @@ import MainLayout from "../components/layout/mainLayout";
 import FifthSection from "../components/sections/fifthSection";
 import pages from "../constants/pages";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import HeadlineHero from "../components/common/headlinehero";
+
 import TestimonialSection from "../components/sections/testimonialSection";
 import { useEffect, useRef } from "react";
 import Observers from "../utils/observers";
 import { motion } from "framer-motion";
+import NormalHeadline from "../components/common/normalHeadline";
 
 const ImageBox = styled(Box)(({ theme }) => ({
   borderTop: `1px solid rgba(255,255,255,0.5)`,
@@ -67,7 +68,7 @@ export default function About() {
             textAlign: "center",
           }}
         >
-          <HeadlineHero>We are focused on driving results</HeadlineHero>
+          <NormalHeadline>We are focused on driving results</NormalHeadline>
           <Typography
             variant="h5"
             component="h3"

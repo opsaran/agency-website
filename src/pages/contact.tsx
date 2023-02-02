@@ -1,5 +1,4 @@
 import {
-  Box,
   Container,
   List,
   ListItem,
@@ -12,27 +11,24 @@ import {
 
 import { NextPage } from "next";
 import dynamic from "next/dynamic";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 // import ContactForm from "../components/common/contactForm";
 import { StyledGradientSection } from "../components/common/customHeroGraphic";
 import MainLayout from "../components/layout/mainLayout";
 import pages from "../constants/pages";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { CTAButtonBig } from "../components/Items/ctaButton";
-import HeadlineHero from "../components/common/headlinehero";
+
 import { useEffect, useRef } from "react";
 import Observers from "../utils/observers";
 import FifthSection from "../components/sections/fifthSection";
+import NormalHeadline from "../components/common/normalHeadline";
 
 const ContactForm = dynamic(() => import("../components/common/contactForm"));
 
 const CheckIcon = styled(CheckCircleIcon)(({ theme }) => ({
   color: (theme as unknown as any).palette.text.secondary,
 }));
-const gradientSection = styled(Box)(({ theme }) => ({
-  width: "100%",
-  background: (theme as unknown as any).palette.text.secondary,
-}));
+
 const Contact: NextPage = () => {
   const growRef = useRef(null);
   const growRef2 = useRef(null);
@@ -58,7 +54,7 @@ const Contact: NextPage = () => {
               textAlign: "center",
             }}
           >
-            <HeadlineHero>Let's do great work together</HeadlineHero>
+            <NormalHeadline>Let's do great work together</NormalHeadline>
             <Typography
               variant="h5"
               component="p"

@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Error from "next/error";
+import ErrorPage from "next/error";
 
 import { useRouter } from "next/router";
 import MainLayout from "../../components/layout/mainLayout";
@@ -9,7 +9,7 @@ import BlogFirstSection from "../../components/sections/blogFirstSection";
 import FifthSection from "../../components/sections/fifthSection";
 import { BlogPostInterface } from "../../types/blogTypes";
 
-const graphcms = new GraphQLClient(`${process.env.NEXT_PUBLIC_GRAPHCMS_URL}`);
+const graphcms = new GraphQLClient(`${process.env.GRAPHCMS_URL}`);
 
 const QUERY = gql`
   query Post($slug: String!) {
@@ -72,7 +72,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       blogPost: post,
     },
-    revalidate: 300,
   };
 };
 
@@ -83,7 +82,7 @@ interface BlogPostPageProps {
 const BlogPost: NextPage<BlogPostPageProps> = ({ blogPost }) => {
   const router = useRouter();
   if (!router.isFallback && !blogPost?.slug) {
-    return <Error statusCode={404} />;
+    return <ErrorPage statusCode={404} title="loading..." />;
   }
   return (
     <>

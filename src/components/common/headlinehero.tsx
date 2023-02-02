@@ -3,25 +3,6 @@ import { Typography, TypographyProps } from "@mui/material";
 import { useEffect } from "react";
 import { useRef } from "react";
 import styles from "./headlinehero.module.css";
-export default function HeadlineHero(props: TypographyProps) {
-  const { children, ...otherProps } = props;
-
-  return (
-    <Typography
-      className="hero-headline-anim text-anim"
-      variant="h2"
-      sx={{
-        fontSize: { xs: "2.5rem", md: "3rem" },
-        fontWeight: "900",
-        lineHeight: { xs: "3rem", md: "inherit" },
-        textTransform: "uppercase",
-      }}
-      {...otherProps}
-    >
-      {children}
-    </Typography>
-  );
-}
 
 export function HeadlineHero1(props: TypographyProps) {
   const { children, ...otherProps } = props;
@@ -30,21 +11,20 @@ export function HeadlineHero1(props: TypographyProps) {
   const rand = (min: number, max: number) =>
     Math.floor(Math.random() * (max - min + 1)) + min;
 
-  const animate = (star: HTMLSpanElement) => {
-    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
-    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
-
-    star.style.animation = "none";
-    star.offsetHeight;
-    star.style.animation = "";
-  };
-
   const intervalsRef = useRef<any>([]);
 
   useEffect(() => {
     if (!ref1.current) return;
     let index = 0;
     let interval = 1000;
+    const animate = (star: HTMLSpanElement) => {
+      star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+      star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+      star.style.animation = "none";
+      star.offsetHeight;
+      star.style.animation = "";
+    };
 
     const observer = new IntersectionObserver((entries) => {
       for (let i = 0; i < entries.length; i++) {

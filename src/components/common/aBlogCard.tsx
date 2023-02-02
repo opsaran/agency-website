@@ -4,7 +4,6 @@ import ImageWithSkeleton from "./imageWithSkeleton";
 import { styled } from "@mui/material";
 import { BlogCardLink } from "../Items/ctaButton";
 import Link from "../../utils/link";
-import dayjs from "dayjs";
 
 interface BlogCardProps {
   children?: React.ReactNode;
@@ -13,6 +12,7 @@ interface BlogCardProps {
   imageAlt: string;
   imageSrc: string;
   title: string;
+  index: number;
 }
 
 const CustomCard = styled("div")(({ theme }) => ({
@@ -38,9 +38,20 @@ export default function ABlogCard(props: BlogCardProps) {
     imageAlt = "Boom Blog",
     imageSrc,
     title,
+    index,
     ...otherProps
   } = props;
-  const parsed = dayjs(date).format("MMMM, D YYYY");
+
+  const newdate = new Date(date);
+
+  const options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  };
+
+  const parsed = newdate.toLocaleDateString("en-US", options);
+
   return (
     <CustomCard>
       <div
@@ -57,6 +68,7 @@ export default function ABlogCard(props: BlogCardProps) {
           alt={imageAlt}
           width={1280}
           height={720}
+          priority={index == 0}
           style={{
             width: "100%",
             objectFit: "contain",
@@ -64,7 +76,7 @@ export default function ABlogCard(props: BlogCardProps) {
             borderRadius: "20px",
             boxShadow: "0px 0px 60px rgb(29, 12, 30)",
           }}
-          sizes="(max-width: 600px) 80vw,
+          sizes="(max-width: 600px) 65vw,
             (max-width: 900px) 80vw,
             40vw"
         />
@@ -88,6 +100,7 @@ export default function ABlogCard(props: BlogCardProps) {
 
         <Typography
           variant="h5"
+          component="h3"
           mb="1.6rem"
           fontSize={"1.5rem"}
           lineHeight="1.3"

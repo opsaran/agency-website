@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Stack, styled, Typography } from "@mui/material";
-import dayjs from "dayjs";
+
 import Image from "next/image";
 import { BlogPostHero } from "../../types/blogTypes";
 
@@ -10,18 +10,31 @@ const LightText = styled("p")(({ theme }) => ({
 const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
   const { title, excerpt, updatedAt, readTime, id, author, coverImage } = props;
 
-  const parsed = dayjs(updatedAt).format("MMMM, D YYYY");
+  const newdate = new Date(updatedAt);
+
+  const options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  };
+
+  const parsed = newdate.toLocaleDateString("en-US", options);
   return (
     <Container sx={{ mt: { xs: "6rem", md: "9rem" } }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Stack spacing={3}>
-            <Typography variant="h3" lineHeight={"3.5rem"}>
+            <Typography
+              variant="h3"
+              lineHeight={{ xs: "2.8rem", md: "3.5rem" }}
+              fontSize={{ xs: "2rem", md: "2.8rem" }}
+              component="h1"
+            >
               {title}
             </Typography>
             <Typography
               variant="h6"
-              component="h4"
+              component="p"
               color="text.secondary"
               fontWeight="100"
             >
@@ -59,6 +72,7 @@ const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
             alt={coverImage.fileName}
             width="1280"
             height="720"
+            priority
             style={{
               width: "100%",
               height: "auto",
