@@ -34,7 +34,7 @@ const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
             </Typography>
             <Typography
               variant="h6"
-              component="h4"
+              component="p"
               color="text.secondary"
               fontWeight="100"
             >
@@ -72,6 +72,7 @@ const BlogFirstSection: React.FunctionComponent<BlogPostHero> = (props) => {
             alt={coverImage.fileName}
             width="1280"
             height="720"
+            priority
             style={{
               width: "100%",
               height: "auto",

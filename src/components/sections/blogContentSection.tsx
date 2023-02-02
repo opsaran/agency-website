@@ -110,11 +110,7 @@ const BlogContentSection: React.FunctionComponent<ContentProps> = (props) => {
                     );
                   }
 
-                  return (
-                    <Link href={href ? href : "/"}>
-                      <a {...rest}>{children}</a>
-                    </Link>
-                  );
+                  return <Link href={href ? href : "/"}>{children}</Link>;
                 },
               }}
             ></RichText>

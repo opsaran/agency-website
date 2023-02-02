@@ -1,11 +1,4 @@
-import {
-  Box,
-  Stack,
-  styled,
-  Tooltip,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Stack, styled, Tooltip, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "../../utils/link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
